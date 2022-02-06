@@ -27,7 +27,7 @@ Users should be able to:
 ![](/images/screenshot.png)
 
 And that's how the page looks on mobile:
-![](/images/Screenshot2.png)
+![](/images/screenshot2.png)
 
 ## My process
 
