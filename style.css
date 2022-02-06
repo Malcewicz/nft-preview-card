@@ -169,7 +169,7 @@ a:hover {
 .attribution {
     display: flex;
     bottom: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
     background-color: var(--card-bg);
     font-size: 12px; 
@@ -198,5 +198,8 @@ a:hover {
     }
     .description p {
         font-size: 18px;
+    }
+    .attribution {
+        display: none;
     }
 }
