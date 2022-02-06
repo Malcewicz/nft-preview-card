@@ -135,7 +135,6 @@ body {
 
 .photo:hover .image {
     opacity: 0.5;
-    range: var(--cyan);
     cursor: pointer;
 }
 
