@@ -10,18 +10,138 @@
     --main-bg: hsl(217, 54%, 11%);
     --card-bg: hsl(216, 50%, 16%);
     --line: hsl(215, 32%, 27%);
+    --text: hsl(215, 51%, 70%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 body {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 0;
+    margin: 0;
     font-size: 18px;
     font-family: 'Outfit', sans-serif;
     background-color: var(--main-bg);
 }
 
+/* ------------
+    Containers
+   ------------ */
 .main {
-    width: 400px;
+    display: inline-block;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 50px hsl(217, 50%, 5%);
+    width: 30rem;
+}
+
+.description p {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.eth-time {
+    display: inline-block;
+    width: 100%;
+}
+
+.eth, .time {
+    width: 50%;
     height: fit-content;
-    justify-content: center;
+    float: left;
+    margin: 0 0 1rem 0;
+}
+
+.icon {
+    height: 1.5rem;
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.eth p {
+    color: var(--cyan);
+    margin: 0;
+    float: left;
+    padding-left: 0.5rem;
+}
+
+.time p {
+    float: right;
+    margin: 0;
+    padding-left: 0.5rem;
+}
+
+.author {
+    display: flex;
+    height: auto;
+    align-items: center;
+    position: relative;
+    padding-top: 1rem;
+}
+
+.author img {
+    max-width: 3rem;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    margin: 0 1rem 0 0;
+}
+
+.author::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: var(--line);
+}
+
+/* -------
+    Image
+   ------- */
+.photo {
+    display: flex;
+    border-radius: 0.5rem;
+}
+
+.image {
+    border-radius: 0.5rem;
+    max-width:100%;
+    max-height:100%;
+    opacity: 1;
+    transition: 300ms ease;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    opacity: 0;
+    transition: 300ms ease;
+}
+
+.photo:hover {
+    background-color: var(--cyan);
+}
+
+.photo:hover .image {
+    opacity: 0.5;
+    range: var(--cyan);
+    cursor: pointer;
+}
+
+.photo:hover .middle {
+    opacity: 1;
+    cursor: pointer;
 }
 
 /* ------
@@ -32,7 +152,7 @@ h2 {
 }
 
 p {
-    color: hsl(215, 51%, 70%);
+    color: var(--text);
 }
 
 a {
@@ -47,11 +167,21 @@ a:hover {
 /* -------------
     Attribution
    ------------- */
-.attribution { 
-    font-size: 11px; 
-    text-align: center; 
+.attribution {
+    display: flex;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background-color: var(--card-bg);
+    font-size: 12px; 
+    justify-content: center;
+    padding: 1em 0 1em 0;
 }
 
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+#r {
+    padding-left: 1em;
 }
